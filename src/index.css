@@ -33,7 +33,7 @@ body {
     text-align: center;
     width: 104px;
   }
-  .square__winner{
+  #square__win{
     border: solid red;
   }
   .square:focus {
