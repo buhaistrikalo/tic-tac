@@ -23,7 +23,7 @@ body {
     background: #fff;
     border: 1px solid #999;
     float: left;
-    font-size: 24px;
+    font-size: 44px;
     font-weight: bold;
     line-height: 34px;
     height: 104px;
@@ -33,7 +33,9 @@ body {
     text-align: center;
     width: 104px;
   }
-  
+  .square__winner{
+    border: solid red;
+  }
   .square:focus {
     outline: none;
   }
@@ -49,5 +51,16 @@ body {
   
   .game-info {
     margin-left: 20px;
+  }
+  .button__history{
+    background: #fff;
+    border: 1px solid #999;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 36px;
+    width: 36px;
+    margin-top: 5px;
+    text-align: center;
   }
   

@@ -83,22 +83,29 @@ class Board extends Component {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winner = gotWinner(current.squares);
+        console.log(winner);
+        function howStep(step) {return step % 2 === 0}
 
         const moves = history.map((step, move) => {
-            const desc = move ? 
-                'Go to move #' + move : 
-                'Go to game start';
-            return (
+            const desc = howStep(move) ? 
+                'O': 
+                'X';
+            let history_steps = move > 0 
+            ? (
                 <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>{ desc }</button>
+                    <button className="button__history" onClick={() => this.jumpTo(move)}>{ desc }</button>
                 </li> 
-            );
+            ) :
+            null;
+            return history_steps;
         });
         let status;
         if (winner) {
-        status = 'Победитель: ' + winner;
+          status = 'Победитель: ' + winner;
+        } else if (this.state.stepNumber > 8) {
+          status = 'Ничья';
         } else {
-        status = 'Следующий игрок: ' + (this.state.nextX ? 'X' : 'O');
+          status = 'Следующий игрок: ' + (this.state.nextX ? 'X' : 'O');
         }
         return (
             <div className="game">
