@@ -15,6 +15,7 @@ class App extends Component {
         stepNumber: 0,
         Score1: 0,
         Score2: 0,
+        PlayerX: true,
     };
   }
   // Move
@@ -49,7 +50,9 @@ class App extends Component {
     this.setState({
       stepNumber: 0,
       nextX: true,
+      PlayerX: !this.state.PlayerX,
     });
+    console.log(this.state.PlayerX);
   }
 
   clearPoint(squares){
@@ -86,13 +89,22 @@ class App extends Component {
     let status;
     if (winner) {
       status = 'Победитель: ' + winner[0];
-      if (winner[0] === 'X') {
-        this.state.Score1 += 1;
+      if (this.state.PlayerX) {
+        if (winner[0] === 'X') {
+          this.state.Score1 += 1;
+        } else {
+          this.state.Score2 += 1;
+        };
       } else {
-        this.state.Score2 += 1;
+        if (winner[0] === 'X') {
+          this.state.Score2 += 1;
+        } else {
+          this.state.Score1 += 1;
+        };
       }
     } else if (this.state.stepNumber > 8) {
       status = 'Ничья';
+      
     } else {
       status = 'Следующий игрок: ' + (this.state.nextX ? 'X' : 'O');
     }
@@ -120,6 +132,7 @@ class App extends Component {
           <Tablo 
             Score1 = { this.state.Score1 }
             Score2 = { this.state.Score2 }
+            PlayerX = { this.state.PlayerX }
           />
         </div>
       </div>
