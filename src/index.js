@@ -47,12 +47,18 @@ class App extends Component {
   clearBoard(squares){
     squares = null;
     this.setState({
-      
       stepNumber: 0,
       nextX: true,
     });
   }
 
+  clearPoint(squares){
+    this.clearBoard(squares);
+    this.setState({
+      Score1: 0,
+      Score2: 0,
+    });
+  }
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -106,8 +112,10 @@ class App extends Component {
                 <ol>{ moves }</ol>
             </div>
         </div>
-        <button className="button__newgame" onClick={() => this.clearBoard(current.squares)}>Новая игра</button>
-        
+        <div className="buttons__game">
+          <button className="button__newgame" onClick={() => this.clearBoard(current.squares)}>Новая игра</button>
+          <button className="button__newgame" onClick={() => this.clearPoint(current.squares)}>Сброс очков</button>
+        </div>
         <div className='tablo'>
           <Tablo 
             Score1 = { this.state.Score1 }

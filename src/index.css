@@ -51,7 +51,9 @@ body {
   
   .game-info {
     margin-left: 20px;
+    max-height: 300px;
   }
+  
   .button__history{
     
     background: #fff;
@@ -87,4 +89,16 @@ body {
     text-align: center;
     margin-left: 40px
   }
+.button__newgame{
+  background: #fff;
+  border: 1px solid #999;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 34px;
+  margin-top: 5px;
+  text-align: center;
+}
+.buttons__game :last-child{
+  margin-left: 20px;
+}
   
