@@ -52,7 +52,6 @@ class App extends Component {
       nextX: true,
       PlayerX: !this.state.PlayerX,
     });
-    console.log(this.state.PlayerX);
   }
 
   clearPoint(squares){
@@ -112,7 +111,6 @@ class App extends Component {
     return (
       <div>
         <div className="game">
-          
             <div className="game-board">
                 <Board 
                     squares={current.squares}
@@ -125,8 +123,8 @@ class App extends Component {
             </div>
         </div>
         <div className="buttons__game">
-          <button className="button__newgame" onClick={() => this.clearBoard(current.squares)}>Новая игра</button>
-          <button className="button__newgame" onClick={() => this.clearPoint(current.squares)}>Сброс очков</button>
+          <button className="button__newgame, buttons__buttons" onClick={() => this.clearBoard(current.squares)}>Новая игра</button>
+          <button className="button__clearpoint, buttons__buttons" onClick={() => this.clearPoint(current.squares)}>Сброс очков</button>
         </div>
         <div className='tablo'>
           <Tablo 

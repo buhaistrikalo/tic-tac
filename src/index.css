@@ -55,7 +55,6 @@ body {
   }
   
   .button__history{
-    
     background: #fff;
     border: 1px solid #999;
     font-size: 18px;
@@ -89,7 +88,14 @@ body {
     text-align: center;
     margin-left: 40px
   }
-.button__newgame{
+.buttons__game{
+  margin-right: 38%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  box-sizing: border-box;
+}
+.buttons__buttons{
   background: #fff;
   border: 1px solid #999;
   font-size: 18px;
@@ -97,8 +103,5 @@ body {
   line-height: 34px;
   margin-top: 5px;
   text-align: center;
-}
-.buttons__game :last-child{
-  margin-left: 20px;
-}
   
+}
